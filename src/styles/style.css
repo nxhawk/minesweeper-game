@@ -1,0 +1,99 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Alegreya', serif;
+  font-weight: 200;
+  font-size: 1.5rem;
+  line-height: 2;
+  letter-spacing: 4px;
+}
+
+#body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#table{
+  width: 500px;
+  /* height: 318px; */
+  display: flex;
+  flex-wrap: wrap;
+  background-color: silver;
+}
+
+#table div{
+  background-image: url(../img/sprite100.gif);
+  line-height: 0;
+  font-size: 0;
+}
+
+#table .bordertl{
+  background-position: 0px -81px;
+  width: 10px;
+  height: 10px;
+}
+
+#table .bordertr{
+  background-position: -10px -81px;
+  width: 10px;
+  height: 10px;
+}
+
+#table .bordertb{
+  background-position: -40px -81px;
+  width: 16px;
+  height: 10px;
+}
+
+#table .borderlrlong{
+  background-position: -134px -39px;
+  width: 10px;
+  height: 32px;
+}
+
+#face{
+  margin: 3px 182px;
+  background-position: 0 -55px;
+  width: 26px;
+  height: 26px;
+}
+
+#table .borderjointl{
+  background-position: -56px -81px;
+  width: 10px;
+  height: 10px;
+}
+
+#table .borderjointr{
+  background-position: -66px -81px;
+  width: 10px;
+  height: 10px;
+}
+
+
+#table .borderlr{
+  background-position: -134px -39px;
+  width: 10px;
+  height: 16px;
+}
+
+#table .borderbl{
+  background-position: -20px -81px;
+  width: 10px;
+  height: 10px;
+}
+#table .borderbr{
+  background-position: -30px -81px;
+  width: 10px;
+  height: 10px;
+}
+
+header{
+  text-align: center
+}
+
+footer{
+  text-align: center;
+}

@@ -1,0 +1,78 @@
+#table .time0{
+  background-position: 0px 0px;
+  width: 13px;
+  height: 23px;
+}
+
+#table .time1{
+  background-position: -13px 0px;
+  width: 13px;
+  height: 23px;
+}
+
+#table .time2{
+  background-position: -26px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time3{
+  background-position: -39px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time4{
+  background-position: -52px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time5{
+  background-position: -65px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time6{
+  background-position: -78px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time7{
+  background-position: -91px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time8{
+  background-position: -104px 0px;
+  width: 13px;
+  height: 23px;
+}
+#table .time9{
+  background-position: -117px 0px;
+  width: 13px;
+  height: 23px;
+}
+
+/* left time */
+#table #lh{
+  margin: 4px 0px 5px 6px;
+}
+
+#table #lm{
+  margin: 4px 0px 5px 0px;
+}
+
+#table #ls{
+  margin: 4px 0px 5px 0px;
+}
+
+/* right time */
+#table #rh{
+  margin: 4px 0px 5px 0px;
+}
+
+#table #rm{
+  margin: 4px 0px 5px 0px;
+}
+
+#table #rs{
+  margin: 4px 6px 5px 0px;
+}

@@ -1,0 +1,90 @@
+:root{
+  --SQ:-16px
+}
+
+
+
+#table .sq.blank{
+  background-position: 0px -39px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open0{
+    background-position: calc(var(--SQ) * 0) -23px;
+    width: 16px;
+    height: 16px;
+}
+
+#table .sq.open1{
+  background-position: calc(var(--SQ) * 1) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open2{
+  background-position: calc(var(--SQ) * 2) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open3{
+  background-position: calc(var(--SQ) * 3) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open4{
+  background-position: calc(var(--SQ) * 4) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open5{
+  background-position: calc(var(--SQ) * 5) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open6{
+  background-position: calc(var(--SQ) * 6) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open7{
+  background-position: calc(var(--SQ) * 7) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.open8{
+  background-position: calc(var(--SQ) * 8) -23px;
+  width: 16px;
+  height: 16px;
+}
+
+/* bomb */
+#table .sq.bomb{
+  background-position: -16px -39px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.bombdeath{
+  background-position: -32px -39px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.bombno{
+  background-position: -48px -39px;
+  width: 16px;
+  height: 16px;
+}
+
+#table .sq.bombshow{
+  background-position: -64px -39px;
+  width: 16px;
+  height: 16px;
+}
