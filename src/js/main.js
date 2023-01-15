@@ -139,6 +139,7 @@ sq_ele.forEach((sq, idx) => {
 function startGame() {
   canPlay = true;
   timePlay = 0;
+  clearInterval(myTime);
   _changeLeftNum(50);
   _createBot();
   //console.log(bot);
