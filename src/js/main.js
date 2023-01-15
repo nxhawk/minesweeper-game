@@ -26,7 +26,7 @@ const _open2 = (x, y, status) => {
   let idx = x * SZ_COL + y,
     st = "";
 
-  if (timePlay == 0) myTime = setInterval(_changeTime, 1000);
+  if (timePlay == 0) setInterval(_changeTime, 1000);
 
   board[x][y] = status;
   sq_ele[idx].classList.remove("blank");
@@ -65,7 +65,7 @@ rs = document.getElementById("rs");
 
 function _changeTime() {
   if (timePlay + 1 > 999 || !canPlay) {
-    clearInterval(myTime);
+    _clearTime();
     return;
   }
   timePlay = timePlay + 1;
@@ -136,13 +136,25 @@ sq_ele.forEach((sq, idx) => {
   });
 });
 
+const _clearTime = () => {
+  for (i = 0; i < 100; i++) {
+    window.clearInterval(i);
+  }
+};
+
+window.addEventListener("load", () => {
+  _clearTime();
+});
+
+_clearTime();
 function startGame() {
   canPlay = true;
   timePlay = 0;
-  clearInterval(myTime);
+  _clearTime();
   _changeLeftNum(50);
   _createBot();
   //console.log(bot);
 }
 
 startGame();
+_clearTime();
