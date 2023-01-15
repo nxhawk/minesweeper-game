@@ -3,7 +3,7 @@ var canPlay = false;
 var timePlay = 0;
 var board = new Array(SZ_ROW);
 for (let i = 0; i < SZ_ROW; i++) board[i] = new Array(SZ_COL).fill(10);
-var myTime;
+var run = false;
 
 //from idx of square => vt (x, y) in board game
 const _index = (idx) => {
@@ -26,7 +26,7 @@ const _open2 = (x, y, status) => {
   let idx = x * SZ_COL + y,
     st = "";
 
-  if (timePlay == 0) setInterval(_changeTime, 1000);
+  if (timePlay == 0 && !run) (run = true), setInterval(_changeTime, 1000);
 
   board[x][y] = status;
   sq_ele[idx].classList.remove("blank");
@@ -142,14 +142,10 @@ const _clearTime = () => {
   }
 };
 
-window.addEventListener("load", () => {
-  _clearTime();
-});
-
-_clearTime();
 function startGame() {
   canPlay = true;
   timePlay = 0;
+  run = false;
   _clearTime();
   _changeLeftNum(50);
   _createBot();
@@ -157,4 +153,3 @@ function startGame() {
 }
 
 startGame();
-_clearTime();
