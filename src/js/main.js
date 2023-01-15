@@ -110,7 +110,7 @@ const _changeLeftNum = (num) => {
   lh.classList.add("time" + st[0]);
   lm.classList.add("time" + st[1]);
   ls.classList.add("time" + st[2]);
-  if (num === 0 && _checkWin()) _win();
+  if (num === 0 && _checkWin()) setTimeout(_win, 100);
 };
 
 //all square in board game
