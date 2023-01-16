@@ -13,7 +13,7 @@ const _repair = () => {
   table.innerHTML += "<div class='time0' id = 'lh'></div>";
   table.innerHTML += "<div class='time9' id = 'lm'></div>";
   table.innerHTML += "<div class='time9' id = 'ls'></div>";
-  table.innerHTML += "<div class='facesmile' id='face'></div>";
+  table.innerHTML += "<div id='face'></div>";
   table.innerHTML += "<div class='time0' id = 'rh'></div>";
   table.innerHTML += "<div class='time0' id = 'rm'></div>";
   table.innerHTML += "<div class='time0' id = 'rs'></div>";

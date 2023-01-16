@@ -99,3 +99,15 @@ header{
 footer{
   text-align: center;
 }
+
+#face:active{
+  background-position: -26px -55px;
+}
+
+#face.wow{
+  background-position: -52px -55px;
+}
+
+#face.died{
+  background-position: -78px -55px;
+}

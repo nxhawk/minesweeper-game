@@ -2,7 +2,6 @@
 var canPlay = false;
 var timePlay = 0;
 var board = new Array(SZ_ROW);
-for (let i = 0; i < SZ_ROW; i++) board[i] = new Array(SZ_COL).fill(10);
 var run = false;
 
 //from idx of square => vt (x, y) in board game
@@ -10,6 +9,18 @@ const _index = (idx) => {
   let x = Math.floor(idx / SZ_COL);
   let y = idx - x * SZ_COL;
   return { x, y };
+};
+/**
+ * 0: smile
+ * 1: wow
+ */
+const _changeFace = (status = 0) => {
+  //remove all state
+  face.classList.remove("wow");
+  face.classList.remove("died");
+  //set new face
+  if (status === 1) face.classList.add("wow");
+  else if (status === 2) face.classList.add("died");
 };
 
 //tick square [x,y] and check
@@ -87,7 +98,10 @@ function _changeTime() {
 const _open = (x, y) => {
   if (bot[x][y] === -1) {
     _gameOver(x, y);
+    _changeFace(2);
   } else {
+    _changeFace(1);
+    setTimeout(_changeFace, 300);
     trace(x, y);
   }
 };
@@ -142,14 +156,48 @@ const _clearTime = () => {
   }
 };
 
+const _clearScreen = () => {
+  for (let i = 0; i < SZ_ROW; i++) board[i] = new Array(SZ_COL).fill(10);
+  for (let i = 0; i < SZ_ROW; i++)
+    for (let j = 0; j < SZ_COL; j++) {
+      let idx = i * SZ_COL + j;
+      let sq = sq_ele[idx];
+      for (let k = 0; k < 9; k++) {
+        let s = "open" + k;
+        sq.classList.remove(s);
+      }
+      sq.classList.remove("bomb");
+      sq.classList.remove("bombno");
+      sq.classList.remove("bombdeath");
+      sq.classList.remove("bombshow");
+      sq.classList.remove("blank");
+      sq.classList.add("blank");
+    }
+  for (let i = 0; i <= 9; i++) {
+    s = "time" + i;
+    rh.classList.remove(s);
+    rm.classList.remove(s);
+    rs.classList.remove(s);
+  }
+  rh.classList.add("time" + 0);
+  rm.classList.add("time" + 0);
+  rs.classList.add("time" + 0);
+};
+
 function startGame() {
   canPlay = true;
   timePlay = 0;
   run = false;
+  _changeFace();
+  _clearScreen();
   _clearTime();
-  _changeLeftNum(50);
+  _changeLeftNum(99);
   _createBot();
-  //console.log(bot);
 }
 
 startGame();
+
+face = document.getElementById("face");
+face.addEventListener("click", () => {
+  startGame();
+});
