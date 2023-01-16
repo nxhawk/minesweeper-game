@@ -4,6 +4,12 @@ var timePlay = 0;
 var board = new Array(SZ_ROW);
 var run = false;
 
+const _clearTime = () => {
+  for (i = 0; i < 100; i++) {
+    window.clearInterval(i);
+  }
+};
+
 //from idx of square => vt (x, y) in board game
 const _index = (idx) => {
   let x = Math.floor(idx / SZ_COL);
@@ -37,7 +43,8 @@ const _open2 = (x, y, status) => {
   let idx = x * SZ_COL + y,
     st = "";
 
-  if (timePlay == 0 && !run) (run = true), setInterval(_changeTime, 1000);
+  if (timePlay == 0 && !run && canPlay)
+    (run = true), setInterval(_changeTime, 1000);
 
   board[x][y] = status;
   sq_ele[idx].classList.remove("blank");
@@ -75,7 +82,7 @@ rm = document.getElementById("rm");
 rs = document.getElementById("rs");
 
 function _changeTime() {
-  if (timePlay + 1 > 999 || !canPlay) {
+  if (timePlay + 1 > 999 || !canPlay || !run) {
     _clearTime();
     return;
   }
@@ -149,12 +156,6 @@ sq_ele.forEach((sq, idx) => {
     }
   });
 });
-
-const _clearTime = () => {
-  for (i = 0; i < 100; i++) {
-    window.clearInterval(i);
-  }
-};
 
 const _clearScreen = () => {
   for (let i = 0; i < SZ_ROW; i++) board[i] = new Array(SZ_COL).fill(10);
