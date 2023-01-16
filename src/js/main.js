@@ -158,6 +158,7 @@ sq_ele.forEach((sq, idx) => {
 });
 
 const _clearScreen = () => {
+  _clearTime();
   for (let i = 0; i < SZ_ROW; i++) board[i] = new Array(SZ_COL).fill(10);
   for (let i = 0; i < SZ_ROW; i++)
     for (let j = 0; j < SZ_COL; j++) {
