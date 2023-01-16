@@ -199,5 +199,7 @@ startGame();
 
 face = document.getElementById("face");
 face.addEventListener("click", () => {
+  canPlay = false;
+  _clearTime();
   startGame();
 });
